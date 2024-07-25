@@ -117,7 +117,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     # db.save_local('vector store\\becki')
     if(st.session_state['loaded_db'] == ''):
     
-        loaded_db = FAISS.load_local('vector store\becki',\
+        loaded_db = FAISS.load_local('vector store/becki',\
     embeddings, allow_dangerous_deserialization=True)
         st.session_state['loaded_db'] = loaded_db
     
