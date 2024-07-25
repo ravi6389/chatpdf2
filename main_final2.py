@@ -75,11 +75,11 @@ if (st.session_state['run_once'] == 0):
     # if (st.session_state['run_once'] == 0):
     #reader = PdfReader('C:\\Users\\RSPRASAD\\OneDrive - Danaher\\Learning\\Hackathon\\BecLS_Website_v2.pdf')
     reader = PdfReader('website.pdf')
-    st.write(reader)
+    
     for page in reader.pages:
         documents_1 += page.extract_text()
 
-    st.write(documents_1)
+    # st.write(documents_1)
     # Document Splitting
     chunk_size = 200
     chunk_overlap = 10
@@ -91,6 +91,7 @@ if (st.session_state['run_once'] == 0):
     st.session_state['split_1'] = splitter.split_text(documents_1)
     st.session_state['split_1'] = splitter.create_documents(split_1)
     st.session_state['run_once'] = 1
+    st.write(st.session_state['split_1'])
 
 def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
