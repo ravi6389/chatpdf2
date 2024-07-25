@@ -1,6 +1,6 @@
 import os
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from langchain.document_loaders import TextLoader
 from pypdf import PdfReader
 from langchain import HuggingFaceHub
@@ -63,7 +63,7 @@ if 'run_once' not in st.session_state:
 
 
 
-load_dotenv()
+# load_dotenv()
 
 if (st.session_state['run_once'] == 0):
     documents_1 = ''
