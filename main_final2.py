@@ -94,7 +94,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     
     if (st.session_state['embeddings'] ==''):
-        embeddings = AzureOpenAIEmbeddings(st.secrets['AzureOpenAIEmbeddings'],
+        embeddings = AzureOpenAIEmbeddings(api_key=st.secrets['AzureOpenAIEmbeddings'],
                                     azure_endpoint = st.secrets['azure_endpoint'],
                                     model="text-embedding-3-large",
                                     openai_api_version=st.secrets['openai_api_version'])
