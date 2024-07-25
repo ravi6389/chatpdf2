@@ -64,6 +64,7 @@ if 'run_once' not in st.session_state:
 
 
 # load_dotenv()
+split_1 = ''
 
 if (st.session_state['run_once'] == 0):
     documents_1 = ''
