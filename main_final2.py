@@ -60,7 +60,8 @@ if 'loaded_db' not in st.session_state:
 if 'run_once' not in st.session_state:
     st.session_state['run_once'] = 0
 
-
+if 'split_1' not in st.session_state:
+    st.session_state['split_1'] = ''
 
 
 # load_dotenv()
@@ -87,8 +88,8 @@ if (st.session_state['run_once'] == 0):
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap
     )
-    split_1 = splitter.split_text(documents_1)
-    split_1 = splitter.create_documents(split_1)
+    st.session_state['split_1'] = splitter.split_text(documents_1)
+    st.session_state['split_1'] = splitter.create_documents(split_1)
     st.session_state['run_once'] = 1
 
 def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
@@ -103,9 +104,9 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     else:
         embeddings = st.session_state['embeddings']
     if(st.session_state['db'] ==''):
-        st.write(split_1)
+        st.write(st.session_state['split_1'])
         st.write(embeddings)
-        db = FAISS.from_documents(split_1, embeddings)
+        db = FAISS.from_documents(st.session_state['split_1'], embeddings)
         st.session_state['db'] = db
     else:
         db = st.session_state['db']
