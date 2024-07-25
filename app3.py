@@ -16,6 +16,9 @@ if 'db' not in st.session_state:
 
 if 'loaded_db' not in st.session_state:
     st.session_state['loaded_db'] = '' 
+    
+if 'split_1' not in st.session_state:
+    st.session_state['split_1'] = ''
 
 st.header("Bec LS Website Bot")
 
