@@ -6,4 +6,4 @@ pypdf
 langchain_openai
 streamlit-chat
 faiss-cpu
-langchain-hub
+langchainhub
