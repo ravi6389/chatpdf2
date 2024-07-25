@@ -75,11 +75,11 @@ if (st.session_state['run_once'] == 0):
     # if (st.session_state['run_once'] == 0):
     #reader = PdfReader('C:\\Users\\RSPRASAD\\OneDrive - Danaher\\Learning\\Hackathon\\BecLS_Website_v2.pdf')
     reader = PdfReader('website.pdf')
-    #reader = PdfReader('C:\\Users\\RSPRASAD\\OneDrive - Danaher\\Learning\\Hackathon\\cell.pdf')
+    st.write(reader)
     for page in reader.pages:
         documents_1 += page.extract_text()
 
-
+    st.write(documents_1)
     # Document Splitting
     chunk_size = 200
     chunk_overlap = 10
