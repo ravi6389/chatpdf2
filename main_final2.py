@@ -105,7 +105,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
         embeddings = st.session_state['embeddings']
     if(st.session_state['db'] ==''):
         st.write(st.session_state['split_1'])
-        st.write(embeddings)
+        # st.write(embeddings)
         db = FAISS.from_documents(st.session_state['split_1'], embeddings)
         st.session_state['db'] = db
     else:
