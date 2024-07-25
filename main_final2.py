@@ -65,7 +65,7 @@ if 'split_1' not in st.session_state:
 
 
 # load_dotenv()
-split_1 = ''
+# split_1 = ''
 
 if (st.session_state['run_once'] == 0):
     documents_1 = ''
@@ -89,9 +89,10 @@ if (st.session_state['run_once'] == 0):
         chunk_overlap=chunk_overlap
     )
     st.session_state['split_1'] = splitter.split_text(documents_1)
-    st.session_state['split_1'] = splitter.create_documents(split_1)
-    st.session_state['run_once'] = 1
+    st.session_state['split_1'] = splitter.create_documents(st.session_state['split_1'])
     st.write(st.session_state['split_1'])
+    st.session_state['run_once'] = 1
+    
 
 def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
