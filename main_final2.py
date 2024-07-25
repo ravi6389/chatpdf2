@@ -69,7 +69,7 @@ if (st.session_state['run_once'] == 0):
     documents_1 = ''
 
 
-    os.environ['CURL_CA_BUNDLE'] = ''
+    # os.environ['CURL_CA_BUNDLE'] = ''
     # if (st.session_state['run_once'] == 0):
     #reader = PdfReader('C:\\Users\\RSPRASAD\\OneDrive - Danaher\\Learning\\Hackathon\\BecLS_Website_v2.pdf')
     reader = PdfReader('C:\\Users\\RSPRASAD\\OneDrive - Danaher\\Learning\\Hackathon\\beckman_website.pdf')
@@ -107,11 +107,11 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     else:
         db = st.session_state['db']
 
-
-    db.save_local('C:\\Users\\RSPRASAD\\OneDrive - Danaher\\Learning\\Hackathon\\AzureOpenAI\\vector store\\becki')
+    
+    db.save_local('vector store\\becki')
     if(st.session_state['loaded_db'] == ''):
     
-        loaded_db = FAISS.load_local('C:\\Users\\RSPRASAD\\OneDrive - Danaher\\Learning\\Hackathon\\AzureOpenAI\\vector store\\becki',\
+        loaded_db = FAISS.load_local('vector store\\becki',\
     embeddings, allow_dangerous_deserialization=True)
         st.session_state['loaded_db'] = loaded_db
     
