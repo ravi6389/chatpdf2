@@ -1,16 +1,16 @@
-import os
+# import os
 
 # from dotenv import load_dotenv
 from langchain.document_loaders import TextLoader
 from pypdf import PdfReader
-from langchain import HuggingFaceHub
+# from langchain import HuggingFaceHub
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceInstructEmbeddings
+# from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA, ConversationalRetrievalChain
 from langchain.memory import ConversationBufferWindowMemory
 #from langchain_pinecone import PineconeVectorStore
-from langchain.embeddings import HuggingFaceEmbeddings
+# from langchain.embeddings import HuggingFaceEmbeddings
 
 from langchain import hub
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -23,8 +23,8 @@ from langchain import hub
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains.history_aware_retriever import create_history_aware_retriever
 from langchain.chains.retrieval import create_retrieval_chain
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain_pinecone import PineconeVectorStore
+# from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+# from langchain_pinecone import PineconeVectorStore
 
 from langchain.document_loaders import PyPDFDirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
