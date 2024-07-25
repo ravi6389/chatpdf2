@@ -79,7 +79,7 @@ if (st.session_state['run_once'] == 0):
     for page in reader.pages:
         documents_1 += page.extract_text()
 
-    # st.write(documents_1)
+   
     # Document Splitting
     chunk_size = 200
     chunk_overlap = 10
@@ -90,7 +90,7 @@ if (st.session_state['run_once'] == 0):
     )
     st.session_state['split_1'] = splitter.split_text(documents_1)
     st.session_state['split_1'] = splitter.create_documents(st.session_state['split_1'])
-    # st.write(st.session_state['split_1'])
+    
     st.session_state['run_once'] = 1
     
 
@@ -126,7 +126,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
 
     if(st.session_state['llm'] ==''):
-        llm = AzureChatOpenAI(api_key = st.secrets['api_key'],
+        llm = AzureChatOpenAI(api_key = st.secrets['AzureChatOpenAI'],
                         azure_endpoint = st.secrets['azure_endpoint'],
                         model = "gpt-4o",
                         api_version=st.secrets['api_version'],
