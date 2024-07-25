@@ -4,3 +4,4 @@ streamlit
 langchain_community
 pypdf
 langchain_openai
+streamlit-chat
