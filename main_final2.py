@@ -99,7 +99,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
     if (st.session_state['embeddings'] ==''):
         embeddings = AzureOpenAIEmbeddings(api_key=st.secrets['AzureOpenAIEmbeddings'],
-                                    azure_endpoint = st.secrets['azure_endpoint'],
+                                    azure_endpoint = st.secrets['azure_endpoint1'],
                                     model="text-embedding-3-large",
                                     openai_api_version=st.secrets['openai_api_version'])
         st.session_state['embeddings'] = embeddings
@@ -126,7 +126,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     if(st.session_state['llm'] ==''):
         llm = AzureChatOpenAI(api_key = st.secrets['AzureChatOpenAI'],
-                        azure_endpoint = st.secrets['azure_endpoint'],
+                        azure_endpoint = st.secrets['azure_endpoint2'],
                         model = "gpt-4o",
                         api_version=st.secrets['api_version'],
                         temperature = 0.8
