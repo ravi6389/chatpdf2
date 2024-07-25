@@ -5,3 +5,4 @@ langchain_community
 pypdf
 langchain_openai
 streamlit-chat
+faiss-cpu
