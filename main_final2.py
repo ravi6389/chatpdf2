@@ -90,7 +90,7 @@ if (st.session_state['run_once'] == 0):
     )
     st.session_state['split_1'] = splitter.split_text(documents_1)
     st.session_state['split_1'] = splitter.create_documents(st.session_state['split_1'])
-    st.write(st.session_state['split_1'])
+    # st.write(st.session_state['split_1'])
     st.session_state['run_once'] = 1
     
 
