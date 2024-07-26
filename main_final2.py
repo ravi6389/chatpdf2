@@ -90,7 +90,7 @@ if (st.session_state['run_once'] == 0):
     )
     st.session_state['split_1'] = splitter.split_text(documents_1)
     st.session_state['split_1'] = splitter.create_documents(st.session_state['split_1'])
-    # st.write(st.session_state['split_1'])
+    st.write(st.session_state['split_1'])
     st.session_state['run_once'] = 1
     
 
@@ -105,7 +105,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
         st.session_state['embeddings'] = embeddings
     else:
         embeddings = st.session_state['embeddings']
-    if(st.session_state['db'] ==''):
+    if(st.session_state['db'] =='' and st.session_state['split_1']):
         
         db = FAISS.from_documents(st.session_state['split_1'], embeddings)
         st.session_state['db'] = db
