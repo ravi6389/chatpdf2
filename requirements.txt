@@ -7,3 +7,4 @@ langchain_openai
 streamlit-chat
 faiss-cpu
 langchainhub
+accelerate
