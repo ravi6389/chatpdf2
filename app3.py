@@ -21,7 +21,7 @@ if 'split_1' not in st.session_state:
     st.session_state['split_1'] = ''
 
 st.header("Bec LS Website Bot")
-
+st.write("Developed by Ravi Shankar Prasad, Data Scientist at Beckman Coulter Life Sciences)
 
 prompt = st.text_input("Prompt", placeholder="Enter your prompt here..")
 #prompt = st.chat_input("Prompt")
