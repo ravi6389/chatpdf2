@@ -27,7 +27,7 @@ st.write("You can ask me questions like below -- As I am GenAI enabled, you need
 
 st.write("What are Beckman Cell Counters?")
 st.write("What are Beckman Sizers and Media Analyzers?")
-st.write("What are Beckman Flow Cytometry?")
+st.write("What is Beckman Flow Cytometry?")
 st.write("What are Beckman Automated Liquid Handling Solutions?")
 st.write("What are Beckman HIAC Liquid Particle Counters?")
 st.write("What are Beckman Microbioreactors?")
