@@ -23,17 +23,17 @@ if 'split_1' not in st.session_state:
 st.header("Bec LS Website Bot")
 st.write("Developed by Ravi Shankar Prasad, Data Scientist at Beckman Coulter Life Sciences.")
 
-st.write("You can ask me questions like below -- As I am GenAI enabled, you need not adhere to the exact form of the question as shown below but please ensure the context is captured")
+# st.write("You can ask me questions like below -- As I am GenAI enabled, you need not adhere to the exact form of the question as shown below but please ensure the context is captured")
 
-st.write("What are Beckman Cell Counters?")
-st.write("What are Beckman Sizers and Media Analyzers?")
-st.write("What is Beckman Flow Cytometry?")
-st.write("What are Beckman Automated Liquid Handling Solutions?")
-st.write("What are Beckman HIAC Liquid Particle Counters?")
-st.write("What are Beckman Microbioreactors?")
-st.write("What are Beckman Particle Size Analyzers?")
-st.write("What are Beckman Genomic Solutions?")
-st.write("How can I contact Beckman?")
+# st.write("What are Beckman Cell Counters?")
+# st.write("What are Beckman Sizers and Media Analyzers?")
+# st.write("What is Beckman Flow Cytometry?")
+# st.write("What are Beckman Automated Liquid Handling Solutions?")
+# st.write("What are Beckman HIAC Liquid Particle Counters?")
+# st.write("What are Beckman Microbioreactors?")
+# st.write("What are Beckman Particle Size Analyzers?")
+# st.write("What are Beckman Genomic Solutions?")
+# st.write("How can I contact Beckman?")
 
 
 prompt = st.text_input("Prompt", placeholder="Enter your prompt here..")
