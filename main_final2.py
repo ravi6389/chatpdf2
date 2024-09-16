@@ -146,7 +146,12 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
     {context}\
     
-    </context>"""
+    </context>
+    If you do not find the context, please reply \'I do not know\'
+
+    Please include hyperlink in reply if context has hyperlink
+    
+    """
     
     stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
 
