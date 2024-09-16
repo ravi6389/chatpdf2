@@ -140,7 +140,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
     #retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
 
-    retrieval_qa_chat_prompt = """Answer any use questions based solely on the context below and if you dont find context reply that you dont know:
+    retrieval_qa_chat_prompt = """Answer any use questions based solely on the context below:
 
     <context>
     
