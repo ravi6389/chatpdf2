@@ -129,7 +129,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
                         azure_endpoint = st.secrets['azure_endpoint2'],
                         model = "gpt-4o",
                         api_version=st.secrets['api_version'],
-                        temperature = 0.8
+                        temperature = 0
                     )
         st.session_state['llm'] = llm
     else:
