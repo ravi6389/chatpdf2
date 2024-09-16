@@ -147,7 +147,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     {context}\
     
     </context>
-    If you do not find the context, please reply \'I do not know\'
+    If you do not find the context, please reply that you do not know
 
     Please include hyperlink in reply if context has hyperlink
     
