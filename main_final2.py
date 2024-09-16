@@ -144,8 +144,8 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 {context}
 
 </context>
-# If you find a relevant hyperlink, please include it
-If you don't find the context, please respond \'I do not know\'"
+If you find a relevant hyperlink, please include it.
+If you don't find the context, please respond that context doesn't have answer."
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
     stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
 
