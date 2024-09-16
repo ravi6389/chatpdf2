@@ -149,6 +149,15 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     # </context>
         
     # """
+
+    template = """
+    You are an AI assistant. Provide a detailed answer based on the following context:
+    Context: {context}
+    # Question: {question}
+    Answer in a concise manner and only using the provided context. If you don't find the answer in context, say so.
+    """
+
+
     
     stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
 
@@ -161,8 +170,13 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     # result = qa.invoke(input={"input": query, "chat_history": chat_history})
     # return result
-    retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
-    combine_docs_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
+    # retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
+    
+    # combine_docs_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
+
+    combine_docs_chain = create_stuff_documents_chain(llm, template)
+
+    
     retrival_chain = create_retrieval_chain(
         retriever=history_aware_retriever, combine_docs_chain=combine_docs_chain
     )
