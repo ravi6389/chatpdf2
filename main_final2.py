@@ -147,7 +147,6 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     {context}
     </context>
     
-    If the context does not provide enough information to answer the question, respond that you do not know."
     """
     
 
