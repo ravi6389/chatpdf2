@@ -167,7 +167,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     
     # stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
-
+    stuff_documents_chain = create_stuff_documents_chain(llm, template)
     history_aware_retriever = create_history_aware_retriever(
         llm=llm, retriever=loaded_db.as_retriever(), prompt=rephrase_prompt
     )
