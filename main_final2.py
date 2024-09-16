@@ -140,21 +140,33 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
 
-    retrieval_qa_chat_prompt = """Answer the following question based solely on the context below:
+    # retrieval_qa_chat_prompt = """Answer the following question based solely on the context below:
 
-    <context>
-    {context}
-    </context>
+    # <context>
+    # {context}
+    # </context>
     
-    If the context does not provide enough information to answer the question, respond with "I don't know."
+    # If the context does not provide enough information to answer the question, respond with "I don't know."
+    # """
+    template = PromptTemplate.from_template(
     """
-   
+    Use the following pieces of context to answer the question at the end. If you 
+    don't know the answer, just say that you don't know, don't try to make up an 
+    answer.
+    
+    {context}
+    
+    Question: {question}
+    Helpful Answer:
+    """
+)
+
 
     
 
 
     
-    stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
+    # stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
 
     history_aware_retriever = create_history_aware_retriever(
         llm=llm, retriever=loaded_db.as_retriever(), prompt=rephrase_prompt
