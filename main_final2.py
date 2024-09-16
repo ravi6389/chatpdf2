@@ -40,6 +40,7 @@ from langchain.chains.retrieval import create_retrieval_chain
 from langchain.document_loaders import CSVLoader
 
 from langchain.indexes import VectorstoreIndexCreator
+from langchain.prompts import PromptTemplate
 
 #from hugchat import hugchat
 from typing import Any, Dict, List
