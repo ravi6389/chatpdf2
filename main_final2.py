@@ -157,8 +157,8 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
     {context}
     
-    Question: {question}
-    Helpful Answer:
+    # Question: {question}
+    # Helpful Answer:
     """
 )
 
