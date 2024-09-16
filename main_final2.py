@@ -140,22 +140,16 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
 
-    # retrieval_qa_chat_prompt = """Answer any use questions based solely on the context below:
+    retrieval_qa_chat_prompt = """Answer the following question based solely on the context below:
 
-    # <context>
+    <context>
+    {context}
+    </context>
     
-    # {context}
-    
-    # </context>
-        
-    # """
+    If the context does not provide enough information to answer the question, respond with "I don't know."
+   
 
-    template = """
-    You are an AI assistant. Provide a detailed answer based on the following context:
-    Context: {context}
-    # Question: {question}
-    Answer in a concise manner and only using the provided context. If you don't find the answer in context, say so.
-    """
+    
 
 
     
