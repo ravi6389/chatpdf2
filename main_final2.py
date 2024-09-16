@@ -140,19 +140,6 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     rephrase_prompt = hub.pull("langchain-ai/chat-langchain-rephrase")
     
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
-
-    retrieval_qa_chat_prompt = """Answer the following question based solely on the context below:
-
-    <context>
-    {context}
-    </context>
-    
-    """
-    
-
-    
-
-
     
     stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
     
