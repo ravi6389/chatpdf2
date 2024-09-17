@@ -127,8 +127,8 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
         llm = AzureChatOpenAI(api_key = st.secrets['AzureChatOpenAI'],
                         azure_endpoint = st.secrets['azure_endpoint2'],
                         model = "gpt-4o",
-                        api_version=st.secrets['api_version'],
-                        temperature = 0
+                        api_version=st.secrets['api_version']
+                        # temperature = 0
                     )
         st.session_state['llm'] = llm
     else:
