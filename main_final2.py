@@ -104,12 +104,12 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
         st.session_state['embeddings'] = embeddings
     else:
         embeddings = st.session_state['embeddings']
-    if(st.session_state['db'] =='' and st.session_state['split_1']):
+    # if(st.session_state['db'] =='' and st.session_state['split_1']):
         
-        db = FAISS.from_documents(st.session_state['split_1'], embeddings)
-        st.session_state['db'] = db
-    else:
-        db = st.session_state['db']
+    #     db = FAISS.from_documents(st.session_state['split_1'], embeddings)
+    #     st.session_state['db'] = db
+    # else:
+    #     db = st.session_state['db']
 
     
     # db.save_local('vector store\\becki2')
