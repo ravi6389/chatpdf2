@@ -88,7 +88,7 @@ if st.session_state["chat_answers_history"]:
         st.session_state["chat_answers_history"],
         st.session_state["user_prompt_history"],
     ):
-        st.session_state['count'] = st.session_state['count']+1
-        message(user_query, is_user=True, key =  st.session_state['count'])
-        st.session_state['count'] = st.session_state['count']+1
-        message(generated_response, key =  st.session_state['count'])
+        # st.session_state['count'] = st.session_state['count']+1
+        message(user_query, is_user=True)
+        # st.session_state['count'] = st.session_state['count']+1
+        message(generated_response)
