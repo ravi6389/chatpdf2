@@ -20,6 +20,10 @@ if 'loaded_db' not in st.session_state:
 if 'split_1' not in st.session_state:
     st.session_state['split_1'] = ''
 
+if 'count' not in st.session_state:
+    st.session_state['count'] = 0
+
+
 st.header("Bec LS Website Bot")
 st.write("Developed by Ravi Shankar Prasad, Data Scientist at Beckman Coulter Life Sciences.")
 
@@ -84,5 +88,6 @@ if st.session_state["chat_answers_history"]:
         st.session_state["chat_answers_history"],
         st.session_state["user_prompt_history"],
     ):
-        message(user_query, is_user=True)
+        st.session_state['count'] = st.session_state['count']+1
+        message(user_query, is_user=True, key =  st.session_state['count'])
         message(generated_response)
