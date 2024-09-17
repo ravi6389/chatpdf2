@@ -141,7 +141,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     retrieval_qa_chat_prompt = PromptTemplate.from_template(
     """
-    Use the following pieces of context to answer the question at the end. If you 
+    Use the following pieces of context to answer the question at the end. Give as much details as you can from the context.If you 
     don't know the answer, just say that you don't know, don't try to make up an 
     answer. If you find hyperlink in the context, inlcude that in answer.
 
