@@ -141,7 +141,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     retrieval_qa_chat_prompt = PromptTemplate.from_template(
     """
-   Answer any use questions based solely on the context below. Use strictly the context to answer the questions:
+   Answer any use questions based solely on the context below.
 
 <context>
 
