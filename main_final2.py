@@ -139,17 +139,17 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
 
-#     retrieval_qa_chat_prompt = PromptTemplate.from_template(
-#     """
-#    Answer any use questions based solely on the context below.
+    retrieval_qa_chat_prompt = PromptTemplate.from_template(
+    """
+   Answer any use questions based solely on the context below. If you do not find the context, say so.
 
-# <context>
+<context>
 
-# {context}
+{context}
 
-# </context>
-#     """
-# )
+</context>
+    """
+)
     
     
     stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
