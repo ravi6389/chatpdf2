@@ -143,7 +143,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     retrieval_qa_chjat_prompt = PromptTemplate.from_template(
     """
-   Answer any use questions based solely on the context below. If you do not find the context, reply that you do not know:
+   Answer any use questions based solely on the context below. If you do not find the context, do not use your own kowledge to answer the question:
 
 <context>
 
