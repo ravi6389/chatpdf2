@@ -141,21 +141,17 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     retrieval_qa_chat_prompt = PromptTemplate.from_template(
     """
-   Answer any use questions based solely on the context below. 
+    Use the following pieces of context to answer the question at the end. If you 
+    don't know the answer, just say that you don't know, don't try to make up an 
+    answer.
 
-<context>
+    {context}
 
-{context}
-
-</context>
-
-  CHAT HISTORY: 
-  {chat_history}
-  
-  ANSWER:
-  """
-
+    Question: {question}
+    Helpful Answer:
+    """
 )
+
     
     
     stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
