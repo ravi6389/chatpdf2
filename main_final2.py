@@ -139,9 +139,9 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
 
     rephrase_prompt = hub.pull("langchain-ai/chat-langchain-rephrase")
     
-    retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
+    # retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
 
-    retrieval_qa_chjat_prompt = PromptTemplate.from_template(
+    retrieval_qa_chat_prompt = PromptTemplate.from_template(
     """
    Answer any use questions based solely on the context below. If you do not find the context, do not answer the question even if you know the answer:
 
