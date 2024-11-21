@@ -143,7 +143,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     """
     Use the following pieces of context to answer the question at the end. Give as much details as you can from the context.If you 
     don't know the answer, just say that you don't know, don't try to make up an 
-    answer. If you find hyperlink in the context, inlcude that in answer.
+    answer. If you find hyperlink in the context, inlcude that in answer. Foe hyperlinks, use only URL provided in the context. Dont makeup any URL on your own.
 
     {context}
 
